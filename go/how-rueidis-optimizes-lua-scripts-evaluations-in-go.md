@@ -16,7 +16,7 @@ This is where Redis lua scripts come in handy.
 I've always used the Ruiedis library (https://github.com/redis/rueidis) for it's featureful Redis client implementation in Go
 
 So I started by doing the typical code like this:
-```
+```go
 script := rueidis.NewLuaScript(`
 local remaining = tonumber(redis.call("GET", KEYS[1]) or "0") 
 if remaining <= 0 then 
@@ -36,7 +36,7 @@ Repeatedly sending the entire script would add unnecessary overhead, especially 
 
 ## Does Rueidis Send the Entire Script Every Time?
 
-```
+```go
 // Check if SHA-1 is already loaded.
 s.sha1Mu.RLock()
 scriptSha1 = s.sha1
@@ -51,7 +51,7 @@ By obtaining the read lock using RLock(), we can safely read the sha1 value insi
 
 This is important for applications that run code in parallel, otherwise we may end up with race conditions.
 
-```
+```go
 if scriptSha1 == "" {
   s.sha1Mu.Lock()
   if s.sha1 == "" { // the double check
@@ -74,7 +74,7 @@ It starts by obtaining a write lock. Once obtained, uses the command `SCRIPT LOA
 
 We can then safely store it inside the Lua struct because we have the write lock.
 
-```
+```go
 resp = c.Do(ctx, s.mayRetryable(c.B().Evalsha().Sha1(scriptSha1).Numkeys(int64(len(keys))).Key(keys...).Arg(args...).Build()))
 ```
 
