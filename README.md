@@ -2,7 +2,7 @@
 
 Some notes on things I've learned recently, inspired by [simonw/til](https://github.com/simonw/til)
 
-I'm not that good at writing, but I'm trying to get better
+I'm not good at writing, but I'm trying to get better
 
 ## Go
 
