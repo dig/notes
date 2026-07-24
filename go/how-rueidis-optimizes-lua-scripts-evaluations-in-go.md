@@ -13,7 +13,7 @@ This is where Redis lua scripts come in handy.
 
 ## Go Library
 
-I've always used the Ruiedis library (https://github.com/redis/rueidis) for it's featureful Redis client implementation in Go
+I've always used the Rueidis library (https://github.com/redis/rueidis) for it's featureful Redis client implementation in Go
 
 So I started by doing the typical code like this:
 ```go
