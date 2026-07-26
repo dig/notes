@@ -1,0 +1,16 @@
+name: Notify site to rebuild
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger josephali.dev rebuild
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.REBUILD_PAT }}
+          repository: dig/josephali.dev
+          event-type: notes-updated
