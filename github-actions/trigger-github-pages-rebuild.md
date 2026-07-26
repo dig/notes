@@ -51,3 +51,14 @@ on:
 ```
 
 Now, whenever I push a change to the `main` branch of `dig/notes`, it sends the `notes-updated` event to the website repository and starts the build and deploy workflow.
+
+Finally, I added this step to the website build workflow:
+
+```yml
+- uses: actions/checkout@v4
+  with:
+    repository: dig/notes
+    path: tils
+```
+
+This clones the notes repository and places it at `{projectRootDir}/tils`. Exactly where the notes were located previously, no code changes needed!
