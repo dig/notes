@@ -2,7 +2,9 @@
 
 Some notes on things I've learned recently, inspired by [simonw/til](https://github.com/simonw/til)
 
-I'm not good at writing, but I'm trying to get better
+## AWS
+
+* [Understanding AWS SQS Visibility Timeout](https://github.com/dig/notes/blob/main/aws/understanding-aws-sqs-visibility-timeout.md)
 
 ## Github Actions
 
