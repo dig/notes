@@ -1,6 +1,6 @@
 ---
 title: Understanding AWS SQS Visibility Timeout
-date: 2026-07-26
+date: 2026-08-23
 ---
 
 # Understanding AWS SQS Visibility Timeout
